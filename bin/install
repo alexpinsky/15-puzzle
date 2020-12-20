@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+set -vx
+
+chmod +x bin/start
+chmod +x bin/test
+
+\curl -sSL https://get.rvm.io | bash -s stable
+rvm install "ruby-2.7.1"
+gem install bundler
+bundle install
