@@ -18,7 +18,9 @@ bin/test
 
 ### Design considerations
 The primary purpose of this architecture is to enforce a separation of concerns between the core of our product (the 15 puzzle game) and the delivery mechanisms (CLI application).
+
 The game can be found under ```/lib```.
+
 The CLI app can be found under ```/apps```.
 
 In terms of the application design, I chose to allow **stateless, persistence ignorant** implementation to support the different delivery mechanisms. For example, it is very easy to design a stateful CLI application. That is, as long as the app is running, the state of the game exists. This kind of implementation won't support the web's stateless nature, where the application state only exists through the request lifetime. Therefore there's a *load game* initial support that allows game initialization from an existing state.
