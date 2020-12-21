@@ -27,7 +27,9 @@ In terms of the application design, I chose to allow **stateless, persistence ig
 
 ### Time trade-offs
 ***Player*** - a Player entity is missing to allow - best score and loading/saving the game.
+
 ***Load/Save a game*** - to allow resuming a game and to support web app.
+
 ***InputParser*** - is implemented in a way that is very coupled to the game moves. If it needs to support other application level commands (retry, load, save, etc.), it will need to get refactored.  It only supports the *exit* command through an exception, which is not very scalable flow control for implementing other commands.
 
 ### References
